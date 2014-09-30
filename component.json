@@ -1,0 +1,26 @@
+{
+  "name": "iso-639-2",
+  "version": "0.0.1",
+  "description": "ISO-639-2 codes in an accessible format",
+  "license": "MIT",
+  "keywords": [
+    "iso-639-2",
+    "iso",
+    "639",
+    "2",
+    "language",
+    "code",
+    "name",
+    "information"
+  ],
+  "dependencies": {
+    "wooorm/datamap-interface": "^0.1.0"
+  },
+  "repository": "wooorm/iso-639-2",
+  "scripts": [
+    "index.js"
+  ],
+  "json": [
+    "data/iso-639-2.json"
+  ]
+}

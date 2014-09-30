@@ -1,0 +1,13 @@
+language: node_js
+script: npm run-script test-travis
+node_js:
+- '0.10'
+- '0.11'
+after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+deploy:
+  provider: npm
+  email: tituswormer@gmail.com
+  api_key:
+    secure: n98dxsLrQ8LBoq5RRFE+4tftuyfktTzRTVfL2REhbVPmGY5h4nGOq6F2lgjKdx1gUMO/ooDcgCh7T/tqB75DnvS5IBU8MMZ/4N038AROAStaJIwwGnN9UxA6kfYIThIecbeU9cdCPPdp9BdwGpc4YmUfztAS0EDAKppOCUTedkk=
+  on:
+    repo: wooorm/iso-639-2

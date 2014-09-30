@@ -1,0 +1,45 @@
+{
+  "name": "iso-639-2",
+  "version": "0.0.1",
+  "description": "ISO-639-2 codes in an accessible format",
+  "license": "MIT",
+  "keywords": [
+    "iso-639-2",
+    "iso",
+    "639",
+    "2",
+    "language",
+    "code",
+    "name",
+    "information"
+  ],
+  "dependencies": {
+    "datamap-interface": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/iso-639-2.git"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com>",
+  "devDependencies": {
+    "eslint": "^0.8.0",
+    "istanbul": "^0.3.0",
+    "jscs": "^1.5.0",
+    "mocha": "^1.20.0",
+    "plain-text-data-to-json": "^0.1.1"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/_mocha --reporter spec --check-leaks -u exports spec/iso-639-2.spec.js",
+    "test-travis": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --check-leaks -u exports spec/iso-639-2.spec.js",
+    "lint": "npm run lint-api && npm run lint-test && npm run lint-style",
+    "lint-api": "node_modules/.bin/eslint index.js build-data.js build-support.js --env node --env browser --rule 'quotes: [2, single]'",
+    "lint-test": "node_modules/.bin/eslint spec/iso-639-2.spec.js --env node --env mocha --rule 'quotes: [2, single]'",
+    "lint-style": "node_modules/.bin/jscs index.js build-data.js build-support.js spec/iso-639-2.spec.js --reporter=inline",
+    "scrape-data": "curl --connect-timeout 15 --max-time 20 -L http://www.loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt -o data/iso-639-2.txt || exit 0",
+    "build-data": "node build-data.js || exit 0",
+    "build-support": "node build-support.js",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- spec/iso-639-2.spec.js",
+    "prepublish": "npm run scrape-data && npm run build-data",
+    "make": "npm run lint && npm run coverage"
+  }
+}

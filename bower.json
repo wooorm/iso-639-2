@@ -1,0 +1,37 @@
+{
+  "name": "iso-639-2",
+  "main": "index.js",
+  "description": "ISO-639-2 codes in an accessible format",
+  "license": "MIT",
+  "keywords": [
+    "iso-639-2",
+    "iso",
+    "639",
+    "2",
+    "language",
+    "code",
+    "name",
+    "information"
+  ],
+  "dependencies": {
+    "datamap-interface": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wooorm/brill.git"
+  },
+  "authors": [
+    "Titus Wormer <tituswormer@gmail.com>"
+  ],
+  "ignore": [
+    ".*",
+    "*.log",
+    "*.md",
+    "component.json",
+    "package.json",
+    "coverage",
+    "node_modules",
+    "spec",
+    "data/iso-639-2.txt"
+  ]
+}

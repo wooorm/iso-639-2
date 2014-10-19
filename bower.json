@@ -27,11 +27,15 @@
     ".*",
     "*.log",
     "*.md",
-    "component.json",
-    "package.json",
-    "coverage",
-    "node_modules",
+    "*.txt",
+    "build/",
+    "components/",
+    "coverage/",
+    "node_modules/",
     "spec",
-    "data/iso-639-2.txt"
+    "build-data.js",
+    "build-support.js",
+    "component.json",
+    "package.json"
   ]
 }

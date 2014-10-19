@@ -7,7 +7,7 @@
 var iso6392,
     assert;
 
-iso6392 = require('..');
+iso6392 = require('./');
 assert = require('assert');
 
 /**

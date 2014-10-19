@@ -21,6 +21,7 @@ describe('iso6392.get(property)', function () {
         result = iso6392.get('eng');
 
         assert(typeof result === 'object');
+
         assert(result.terminologic === null);
         assert(result.iso6391 === 'en');
         assert(result.name === 'English');
@@ -65,6 +66,7 @@ describe('iso6392.all()', function () {
 
     it('should return all values in the datamap', function () {
         assert(Object.keys(all).length === 486);
+
         assert('eng' in all);
         assert('dut' in all);
     });
@@ -73,6 +75,7 @@ describe('iso6392.all()', function () {
         all.unicorn = 'mammal';
 
         assert(!iso6392.has('unicorn'));
+
         assert(!('unicorn' in iso6392.all()));
     });
 });

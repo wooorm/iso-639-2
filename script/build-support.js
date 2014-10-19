@@ -6,7 +6,7 @@ var fs,
 fs = require('fs');
 languages = require('../').all();
 
-fs.writeFileSync('Supported-codes.md',
+fs.writeFileSync('Support.md',
     'Supported Codes\n' +
     '=================\n' +
     '\n' +

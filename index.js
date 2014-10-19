@@ -1,9 +1,23 @@
 'use strict';
 
-var Interface,
-    data;
+/**
+ * Dependencies.
+ */
+
+var Interface;
 
 Interface = require('datamap-interface');
-data = require('./data/iso-639-2.json');
 
-module.exports = new Interface(data);
+/**
+ * Data.
+ */
+
+var words;
+
+words = require('./data/iso-639-2.json');
+
+/**
+ * Expose iso-639-2.
+ */
+
+module.exports = new Interface(words);

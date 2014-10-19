@@ -39,7 +39,7 @@
     "build-data": "node script/build-data.js",
     "build-support": "node script/build-support.js",
     "coverage": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -- test.js",
-    "prepublish": "npm run scrape-data && npm run build-data",
+    "prepublish": "npm run scrape-data && npm run build-data && npm run build-support",
     "make": "npm run lint && npm run coverage"
   }
 }

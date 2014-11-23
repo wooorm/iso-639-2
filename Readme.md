@@ -1,4 +1,4 @@
-# iso-639-2 [![Build Status](https://travis-ci.org/wooorm/iso-639-2.svg?branch=master)](https://travis-ci.org/wooorm/iso-639-2) [![Coverage Status](https://img.shields.io/coveralls/wooorm/iso-639-2.svg)](https://coveralls.io/r/wooorm/iso-639-2?branch=master)
+# iso-639-2 [![Build Status](https://img.shields.io/travis/wooorm/iso-639-2.svg?style=flat)](https://travis-ci.org/wooorm/iso-639-2) [![Coverage Status](https://img.shields.io/coveralls/wooorm/iso-639-2.svg?style=flat)](https://coveralls.io/r/wooorm/iso-639-2?branch=master)
 
 ISO-639-2 codes in an accessible format, all 486 of 'em.
 

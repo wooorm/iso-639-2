@@ -12,12 +12,12 @@ Interface = require('datamap-interface');
  * Data.
  */
 
-var words;
+var codes;
 
-words = require('./data/iso-639-2.json');
+codes = require('./data/iso-639-2.json');
 
 /**
  * Expose iso-639-2.
  */
 
-module.exports = new Interface(words);
+module.exports = new Interface(codes);

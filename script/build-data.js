@@ -13,9 +13,9 @@ input = fs.readFileSync('data/iso-639-2.txt', 'utf8');
 var data;
 
 data = textToJSON(input, {
-    'comment' : false,
-    'delimiter' : null,
-    'forgiving' : 'fix'
+    'comment': false,
+    'delimiter': null,
+    'forgiving': 'fix'
 });
 
 var dictionary;
@@ -29,9 +29,9 @@ data.forEach(function (line) {
     code = line.shift();
 
     dictionary[code] = {
-        'terminologic' : line[0] || null,
-        'iso6391' : line[1] || null,
-        'name' : line[2]
+        'terminologic': line[0] || null,
+        'iso6391': line[1] || null,
+        'name': line[2]
     };
 });
 

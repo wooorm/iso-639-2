@@ -1,22 +1,30 @@
 'use strict';
 
+/**
+ * Dependencies.
+ */
+
 var fs,
     textToJSON;
 
 fs = require('fs');
 textToJSON = require('plain-text-data-to-json');
 
-var input;
-
-input = fs.readFileSync('data/iso-639-2.txt', 'utf8');
+/**
+ * Data.
+ */
 
 var data;
 
-data = textToJSON(input, {
+data = textToJSON(fs.readFileSync('data/iso-639-2.txt', 'utf8'), {
     'comment': false,
     'delimiter': null,
     'forgiving': 'fix'
 });
+
+/**
+ * Clean.
+ */
 
 var dictionary;
 
@@ -34,5 +42,9 @@ data.forEach(function (line) {
         'name': line[2]
     };
 });
+
+/**
+ * Write.
+ */
 
 fs.writeFileSync('data/iso-639-2.json', JSON.stringify(dictionary, 0, 2));

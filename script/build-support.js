@@ -1,6 +1,6 @@
 'use strict';
 
-/**
+/*
  * Dependencies.
  */
 
@@ -12,7 +12,7 @@ languages = require('..');
 fs = require('fs');
 table = require('markdown-table');
 
-/**
+/*
  * Write.
  */
 

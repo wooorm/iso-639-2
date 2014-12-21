@@ -14,7 +14,7 @@
     "information"
   ],
   "dependencies": {
-    "wooorm/datamap-interface": "^0.2.0"
+    "wooorm/datamap-interface": "^0.3.0"
   },
   "repository": "wooorm/iso-639-2",
   "scripts": [

@@ -49,14 +49,12 @@ Yields:
 
 `Array.<Language>` — List of languages.
 
-### `Language`
+#### `Language`
 
-`Object.<string?>`:
-
-*   `iso6392B` (`string`) — Bibliographic code;
-*   `iso6392T` (`string?`) — Terminologic code;
-*   `iso6391` (`string?`) — ISO 639-1 code;
-*   `name` (`string`) — Language name.
+*   `iso6392B` (`string`) — Bibliographic code
+*   `iso6392T` (`string?`) — Terminologic code
+*   `iso6391` (`string?`) — ISO 639-1 code
+*   `name` (`string`) — Language name
 
 ## License
 

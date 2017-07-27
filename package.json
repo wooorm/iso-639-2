@@ -25,6 +25,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "bail": "^1.0.0",
     "browserify": "^14.0.0",
     "concat-stream": "^1.5.2",
     "d3-dsv": "^1.0.3",
@@ -52,6 +53,8 @@
     ]
   },
   "remarkConfig": {
-    "plugins": ["preset-wooorm"]
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }

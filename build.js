@@ -1,31 +1,33 @@
 'use strict';
 
-/* Dependencies. */
 var fs = require('fs');
-var path = require('path');
 var http = require('http');
+var bail = require('bail');
 var concat = require('concat-stream');
 var dsv = require('d3-dsv');
 
-/* Constants. */
-var input = 'http://www.loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt';
-var output = path.join(__dirname, 'index.json');
+http
+  .request('http://www.loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt', onrequest)
+  .end();
 
-/* Core. */
-http.request(input, function (response) {
-  response.pipe(concat(function (body) {
-    var head = 'b|t|i|n\n';
-    var data = dsv.dsvFormat('|')
-      .parse(head + body.toString())
-      .map(function (d) {
-        return {
-          name: d.n,
-          iso6392B: d.b,
-          iso6392T: d.t || null,
-          iso6391: d.i || null
-        };
-      });
+function onrequest(response) {
+  response.pipe(concat(onconcat));
+}
 
-    fs.writeFile(output, JSON.stringify(data, 0, 2) + '\n');
-  }));
-}).end();
+function onconcat(body) {
+  var head = 'b|t|i|n\n';
+  var data = dsv.dsvFormat('|')
+    .parse(head + body.toString())
+    .map(map);
+
+  fs.writeFile('index.json', JSON.stringify(data, 0, 2) + '\n', bail);
+}
+
+function map(d) {
+  return {
+    name: d.n,
+    iso6392B: d.b,
+    iso6392T: d.t || null,
+    iso6391: d.i || null
+  };
+}

@@ -13,9 +13,9 @@ npm install iso-639-2
 ## Usage
 
 ```javascript
-var iso6392 = require('iso-639-2');
+var iso6392 = require('iso-639-2')
 
-var subset = iso6392.slice(121, 126);
+iso6392.slice(121, 126)
 ```
 
 Yields:

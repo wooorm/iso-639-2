@@ -1,10 +1,11 @@
 language: node_js
 node_js:
-- '4.0'
-- '8.0'
+- lts/boron
+- node
 sudo: false
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: EC3HONPbmXnFkhLzYJwjM2b5MGSO0UuGrlzPMoCBJuHnBaVA+DFU6z9qrHtP07UEvlTEsBTmljES13dt+EwC2qCuYTVu5fMNTNGI0hfWOsAnOOK3SW94C4aVNnp6n056QpgsIdnnC23p0+kSW1vlVCGbU2lI1IfJatWUz4S2HVc=
   file:
@@ -12,4 +13,3 @@ deploy:
     - "iso-639-2.min.js"
   on:
     tags: true
-    node: '8.0'

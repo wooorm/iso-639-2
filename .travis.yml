@@ -7,7 +7,7 @@ deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: EC3HONPbmXnFkhLzYJwjM2b5MGSO0UuGrlzPMoCBJuHnBaVA+DFU6z9qrHtP07UEvlTEsBTmljES13dt+EwC2qCuYTVu5fMNTNGI0hfWOsAnOOK3SW94C4aVNnp6n056QpgsIdnnC23p0+kSW1vlVCGbU2lI1IfJatWUz4S2HVc=
+    secure: H/7AECCmUL2yWlMWKOSo3uuR1a2/WshUbonWXXNHnYMHUqqLow2gNrEnIVkqoOpSDkom9jQixy2q/1XkIKBRXGdBsxkeiSKVKdZE+EUsbVTgzBhScEcLStqDJo+k8Fz/oduqGiToMWPUV7kQ2W685u/oCyHmWqlPSKjNZC9tNuw=
   file:
     - "iso-639-2.js"
     - "iso-639-2.min.js"

@@ -13,11 +13,11 @@
     "name",
     "information"
   ],
-  "repository": "https://github.com/wooorm/iso-639-2",
+  "repository": "wooorm/iso-639-2",
   "bugs": "https://github.com/wooorm/iso-639-2/issues",
-  "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
   "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
   ],
   "main": "index.json",
   "files": [

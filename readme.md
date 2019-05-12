@@ -70,6 +70,6 @@ Yields:
 
 [license]: license
 
-[author]: http://wooorm.com
+[author]: https://wooorm.com
 
-[source]: http://www.loc.gov/standards/iso639-2/php/code_list.php
+[source]: https://www.loc.gov/standards/iso639-2/php/code_list.php

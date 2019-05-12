@@ -1,14 +1,14 @@
 'use strict'
 
 var fs = require('fs')
-var http = require('http')
+var https = require('https')
 var bail = require('bail')
 var concat = require('concat-stream')
 var dsv = require('d3-dsv')
 
-http
+https
   .request(
-    'http://www.loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt',
+    'https://www.loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt',
     onconnection
   )
   .end()

@@ -27,14 +27,14 @@
   "devDependencies": {
     "bail": "^1.0.0",
     "browserify": "^16.0.0",
-    "concat-stream": "^1.5.2",
+    "concat-stream": "^2.0.0",
     "d3-dsv": "^1.0.3",
     "esmangle": "^1.0.1",
     "prettier": "^1.12.1",
-    "remark-cli": "^5.0.0",
+    "remark-cli": "^6.0.0",
     "remark-preset-wooorm": "^4.0.0",
     "tape": "^4.4.0",
-    "xo": "^0.20.0"
+    "xo": "^0.24.0"
   },
   "scripts": {
     "generate": "node build",

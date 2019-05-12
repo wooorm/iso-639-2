@@ -38,7 +38,7 @@
   },
   "scripts": {
     "generate": "node build",
-    "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "build-bundle": "browserify index.json --bare -s iso6392 > iso-639-2.js",
     "build-mangle": "esmangle iso-639-2.js > iso-639-2.min.js",
     "build": "npm run build-bundle && npm run build-mangle",

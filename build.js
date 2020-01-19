@@ -19,24 +19,24 @@ function onconnection(res) {
 
 function onconcat(buf) {
   var doc = String(buf)
+
   if (doc.charCodeAt(0) === 0xfeff) {
     doc = doc.slice(1)
   }
 
-  var head = 'b|t|i|n\n'
   var data = dsv
     .dsvFormat('|')
-    .parse(head + doc)
+    .parse('b|t|i|n\n' + doc)
     .map(map)
 
-  fs.writeFile('index.json', JSON.stringify(data, 0, 2) + '\n', bail)
+  fs.writeFile('index.json', JSON.stringify(data, null, 2) + '\n', bail)
 }
 
 function map(d) {
   return {
     name: d.n,
     iso6392B: d.b,
-    iso6392T: d.t || null,
-    iso6391: d.i || null
+    iso6392T: d.t || undefined,
+    iso6391: d.i || undefined
   }
 }

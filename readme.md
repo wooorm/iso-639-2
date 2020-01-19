@@ -10,41 +10,53 @@
 
 [npm][]:
 
-```bash
+```sh
 npm install iso-639-2
 ```
 
 ## Use
 
-```javascript
+```js
 var iso6392 = require('iso-639-2')
 
-iso6392.slice(121, 126)
+iso6392.slice(120, 150)
 ```
 
 Yields:
 
-```javascript
-[ { name: 'Elamite',
-    iso6392B: 'elx',
-    iso6392T: null,
-    iso6391: null },
-  { name: 'English',
-    iso6392B: 'eng',
-    iso6392T: null,
-    iso6391: 'en' },
-  { name: 'English, Middle (1100-1500)',
-    iso6392B: 'enm',
-    iso6392T: null,
-    iso6391: null },
-  { name: 'Esperanto',
-    iso6392B: 'epo',
-    iso6392T: null,
-    iso6391: 'eo' },
-  { name: 'Estonian',
-    iso6392B: 'est',
-    iso6392T: null,
-    iso6391: 'et' } ]
+```js
+[
+  {name: 'Egyptian (Ancient)', iso6392B: 'egy'},
+  {name: 'Ekajuk', iso6392B: 'eka'},
+  {name: 'Elamite', iso6392B: 'elx'},
+  {name: 'English', iso6392B: 'eng', iso6391: 'en'},
+  {name: 'English, Middle (1100-1500)', iso6392B: 'enm'},
+  {name: 'Esperanto', iso6392B: 'epo', iso6391: 'eo'},
+  {name: 'Estonian', iso6392B: 'est', iso6391: 'et'},
+  {name: 'Ewe', iso6392B: 'ewe', iso6391: 'ee'},
+  {name: 'Ewondo', iso6392B: 'ewo'},
+  {name: 'Fang', iso6392B: 'fan'},
+  {name: 'Faroese', iso6392B: 'fao', iso6391: 'fo'},
+  {name: 'Fanti', iso6392B: 'fat'},
+  {name: 'Fijian', iso6392B: 'fij', iso6391: 'fj'},
+  {name: 'Filipino; Pilipino', iso6392B: 'fil'},
+  {name: 'Finnish', iso6392B: 'fin', iso6391: 'fi'},
+  {name: 'Finno-Ugrian languages', iso6392B: 'fiu'},
+  {name: 'Fon', iso6392B: 'fon'},
+  {name: 'French', iso6392B: 'fre', iso6392T: 'fra', iso6391: 'fr'},
+  {name: 'French, Middle (ca.1400-1600)', iso6392B: 'frm'},
+  {name: 'French, Old (842-ca.1400)', iso6392B: 'fro'},
+  {name: 'Northern Frisian', iso6392B: 'frr'},
+  {name: 'Eastern Frisian', iso6392B: 'frs'},
+  {name: 'Western Frisian', iso6392B: 'fry', iso6391: 'fy'},
+  {name: 'Fulah', iso6392B: 'ful', iso6391: 'ff'},
+  {name: 'Friulian', iso6392B: 'fur'},
+  {name: 'Ga', iso6392B: 'gaa'},
+  {name: 'Gayo', iso6392B: 'gay'},
+  {name: 'Gbaya', iso6392B: 'gba'},
+  {name: 'Germanic languages', iso6392B: 'gem'},
+  {name: 'Georgian', iso6392B: 'geo', iso6392T: 'kat', iso6391: 'ka'}
+]
 ```
 
 ## API

@@ -17,11 +17,16 @@ function onconnection(res) {
   res.pipe(concat(onconcat))
 }
 
-function onconcat(body) {
+function onconcat(buf) {
+  var doc = String(buf)
+  if (doc.charCodeAt(0) === 0xfeff) {
+    doc = doc.slice(1)
+  }
+
   var head = 'b|t|i|n\n'
   var data = dsv
     .dsvFormat('|')
-    .parse(head + body.toString())
+    .parse(head + doc)
     .map(map)
 
   fs.writeFile('index.json', JSON.stringify(data, 0, 2) + '\n', bail)

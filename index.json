@@ -342,7 +342,7 @@
     "iso6391": null
   },
   {
-    "name": "Bantu (Other)",
+    "name": "Bantu languages",
     "iso6392B": "bnt",
     "iso6392T": null,
     "iso6391": null
@@ -564,13 +564,13 @@
     "iso6391": null
   },
   {
-    "name": "Creoles and pidgins, French-based ",
+    "name": "Creoles and pidgins, French-based",
     "iso6392B": "cpf",
     "iso6392T": null,
     "iso6391": null
   },
   {
-    "name": "Creoles and pidgins, Portuguese-based ",
+    "name": "Creoles and pidgins, Portuguese-based",
     "iso6392B": "cpp",
     "iso6392T": null,
     "iso6391": null
@@ -588,7 +588,7 @@
     "iso6391": null
   },
   {
-    "name": "Creoles and pidgins ",
+    "name": "Creoles and pidgins",
     "iso6392B": "crp",
     "iso6392T": null,
     "iso6391": null
@@ -1956,7 +1956,7 @@
     "iso6391": null
   },
   {
-    "name": "Occitan (post 1500); Provençal",
+    "name": "Occitan (post 1500)",
     "iso6392B": "oci",
     "iso6392T": null,
     "iso6391": "oc"
@@ -2100,7 +2100,7 @@
     "iso6391": null
   },
   {
-    "name": "Provençal, Old (to 1500)",
+    "name": "Provençal, Old (to 1500); Occitan, Old (to 1500)",
     "iso6392B": "pro",
     "iso6392T": null,
     "iso6391": null
@@ -2202,7 +2202,7 @@
     "iso6391": null
   },
   {
-    "name": "South American Indian (Other)",
+    "name": "South American Indian languages",
     "iso6392B": "sai",
     "iso6392T": null,
     "iso6391": null
@@ -2778,7 +2778,7 @@
     "iso6391": null
   },
   {
-    "name": "Walamo",
+    "name": "Wolaitta; Wolaytta",
     "iso6392B": "wal",
     "iso6392T": null,
     "iso6391": null

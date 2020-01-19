@@ -14,7 +14,7 @@ test('iso6392', function(t) {
     }
 
     t.equal(language.iso6392B, 'eng', 'bibliographic code')
-    t.equal(language.iso6392T, null, 'terminologic code')
+    t.equal(language.iso6392T, undefined, 'terminologic code')
     t.equal(language.iso6391, 'en', '639-1 code')
     t.equal(language.name, 'English', 'name')
   })

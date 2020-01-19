@@ -40,7 +40,7 @@
     "generate": "node build",
     "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
     "build-bundle": "browserify index.json -s iso6392 -o iso-639-2.js",
-    "build-mangle": "browserify index.json -s iso6392 -p tinyify -o iso-639-2.js",
+    "build-mangle": "browserify index.json -s iso6392 -p tinyify -o iso-639-2.min.js",
     "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
     "test": "npm run generate && npm run format && npm run build && npm run test-api"

@@ -25,6 +25,10 @@
   ],
   "main": "index.json",
   "files": [
+    "2b-to-1.json",
+    "2b-to-2t.json",
+    "2t-to-1.json",
+    "2t-to-2b.json",
     "index.json"
   ],
   "dependencies": {},

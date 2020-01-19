@@ -6,6 +6,17 @@
 
 [ISO 639-2][source] codes in an accessible format, all of them.
 
+Also includes pre-built indexes to map from 639-2 codes to other codes:
+
+*   [`iso-639-2/2b-to-1`][2b-to-1]
+    — Map bibliographic ISO 639-2 codes to ISO 639-1 codes
+*   [`iso-639-2/2b-to-2t`][2b-to-2t]
+    — Map bibliographic ISO 639-2 codes to terminologic ISO 639-2 codes
+*   [`iso-639-2/2t-to-1`][2t-to-1]
+    — Map terminologic ISO 639-2 codes to ISO 639-1 codes
+*   [`iso-639-2/2t-to-2b`][2t-to-2b]
+    — Map terminologic ISO 639-2 codes to bibliographic ISO 639-2 codes
+
 ## Install
 
 [npm][]:
@@ -72,6 +83,11 @@ Yields:
 *   `iso6391` (`string?`) — ISO 639-1 code
 *   `name` (`string`) — Language name
 
+## Related
+
+*   [`iso-639-3`](https://github.com/wooorm/iso-639-3)
+    — ISO 639-3 codes in an accessible format
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
@@ -97,3 +113,11 @@ Yields:
 [author]: https://wooorm.com
 
 [source]: https://www.loc.gov/standards/iso639-2/php/code_list.php
+
+[2b-to-1]: 2b-to-1.json
+
+[2b-to-2t]: 2b-to-2t.json
+
+[2t-to-1]: 2t-to-1.json
+
+[2t-to-2b]: 2t-to-2b.json

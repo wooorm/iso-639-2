@@ -6,7 +6,7 @@
 
 [ISO 639-2][source] codes in an accessible format, all of them.
 
-## Installation
+## Install
 
 [npm][]:
 
@@ -14,7 +14,7 @@
 npm install iso-639-2
 ```
 
-## Usage
+## Use
 
 ```javascript
 var iso6392 = require('iso-639-2')

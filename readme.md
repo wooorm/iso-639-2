@@ -89,6 +89,8 @@ Yields:
     — Parse and serialize BCP 47 language tags
 *   [`bcp-47-match`](https://github.com/wooorm/bcp-47-match)
     — Match BCP 47 language tags with language ranges per RFC 4647
+*   [`iso-3166`](https://github.com/wooorm/iso-3166)
+    — ISO 3166 codes
 *   [`iso-639-3`](https://github.com/wooorm/iso-639-3)
     — ISO 639-3 codes
 *   [`iso-15924`](https://github.com/wooorm/iso-15924)

@@ -13,8 +13,8 @@ https
   )
   .end()
 
-function onconnection(res) {
-  res.pipe(concat(onconcat))
+function onconnection(response) {
+  response.pipe(concat(onconcat))
 }
 
 function onconcat(buf) {
@@ -33,7 +33,7 @@ function onconcat(buf) {
     .parse('b|t|i|n\n' + doc)
     .map(map)
 
-  data.forEach(d => {
+  data.forEach((d) => {
     var b = d.iso6392B
     var t = d.iso6392T
     var i = d.iso6391

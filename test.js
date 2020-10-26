@@ -3,12 +3,12 @@
 var test = require('tape')
 var iso6392 = require('.')
 
-test('iso6392', function(t) {
+test('iso6392', function (t) {
   t.plan(5)
 
   t.ok(Array.isArray(iso6392), 'should be an `array`')
 
-  iso6392.forEach(function(language) {
+  iso6392.forEach(function (language) {
     if (language.iso6391 !== 'en') {
       return
     }

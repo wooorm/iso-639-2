@@ -42,7 +42,7 @@
     "remark-preset-wooorm": "^8.0.0",
     "tape": "^5.0.0",
     "tinyify": "^3.0.0",
-    "xo": "^0.34.0"
+    "xo": "^0.37.0"
   },
   "scripts": {
     "generate": "node build",
@@ -65,7 +65,7 @@
     "prettier": true,
     "esnext": false,
     "rules": {
-      "unicorn/no-fn-reference-in-iterator": "off"
+      "unicorn/no-array-callback-reference": "off"
     },
     "ignores": [
       "iso-639-2.js"

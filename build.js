@@ -11,10 +11,22 @@ https
   )
   .end()
 
+/**
+ * @typedef {{n: string, b: string, t?: string, i?: string}} Iso6392Raw
+ *
+ * @typedef {{name: string, iso6392B: string, iso6392T?: string, iso6391?: string}} Iso6392
+ */
+
+/**
+ * @param {import('http').IncomingMessage} response
+ */
 function onconnection(response) {
   response.pipe(concat(onconcat))
 }
 
+/**
+ * @param {Buffer} buf
+ */
 function onconcat(buf) {
   var bTo1 = {}
   var tTo1 = {}
@@ -22,6 +34,7 @@ function onconcat(buf) {
   var tTo2B = {}
   var doc = String(buf)
   var index = -1
+  /** @type {Iso6392} d */
   var d
 
   if (doc.charCodeAt(0) === 0xfeff) {
@@ -31,14 +44,17 @@ function onconcat(buf) {
   var data = dsv
     .dsvFormat('|')
     .parse('b|t|i|n\n' + doc)
-    .map(function (d) {
-      return {
-        name: d.n,
-        iso6392B: d.b,
-        iso6392T: d.t || undefined,
-        iso6391: d.i || undefined
+    .map(
+      /** @param {Iso6392Raw} d */
+      function (d) {
+        return {
+          name: d.n,
+          iso6392B: d.b,
+          iso6392T: d.t || undefined,
+          iso6391: d.i || undefined
+        }
       }
-    })
+    )
 
   while (++index < data.length) {
     d = data[index]
@@ -60,6 +76,11 @@ function onconcat(buf) {
   write('2t-to-2b.js', 'iso6392TTo2B', tTo2B)
   write('2b-to-2t.js', 'iso6392BTo2T', bTo2T)
 
+  /**
+   * @param {string} name
+   * @param {string} id
+   * @param {unknown} data
+   */
   function write(name, id, data) {
     fs.writeFile(
       name,

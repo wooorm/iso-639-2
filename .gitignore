@@ -1,6 +1,5 @@
 .DS_Store
 *.log
+coverage/
 node_modules/
-iso-639-2.js
-iso-639-2.min.js
 yarn.lock

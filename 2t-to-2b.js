@@ -1,0 +1,22 @@
+export var iso6392TTo2B = {
+  sqi: 'alb',
+  hye: 'arm',
+  eus: 'baq',
+  mya: 'bur',
+  zho: 'chi',
+  ces: 'cze',
+  nld: 'dut',
+  fra: 'fre',
+  kat: 'geo',
+  deu: 'ger',
+  ell: 'gre',
+  isl: 'ice',
+  mkd: 'mac',
+  mri: 'mao',
+  msa: 'may',
+  fas: 'per',
+  ron: 'rum',
+  slk: 'slo',
+  bod: 'tib',
+  cym: 'wel'
+}

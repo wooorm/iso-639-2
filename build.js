@@ -1,10 +1,8 @@
-'use strict'
-
-var fs = require('fs')
-var https = require('https')
-var bail = require('bail')
-var concat = require('concat-stream')
-var dsv = require('d3-dsv')
+import fs from 'fs'
+import https from 'https'
+import {bail} from 'bail'
+import concat from 'concat-stream'
+import dsv from 'd3-dsv'
 
 https
   .request(
@@ -33,7 +31,14 @@ function onconcat(buf) {
   var data = dsv
     .dsvFormat('|')
     .parse('b|t|i|n\n' + doc)
-    .map(map)
+    .map(function (d) {
+      return {
+        name: d.n,
+        iso6392B: d.b,
+        iso6392T: d.t || undefined,
+        iso6391: d.i || undefined
+      }
+    })
 
   while (++index < data.length) {
     d = data[index]
@@ -49,22 +54,17 @@ function onconcat(buf) {
     }
   }
 
-  write('index', data)
-  write('2t-to-1', tTo1)
-  write('2b-to-1', bTo1)
-  write('2t-to-2b', tTo2B)
-  write('2b-to-2t', bTo2T)
+  write('2.js', 'iso6392', data)
+  write('2t-to-1.js', 'iso6392TTo1', tTo1)
+  write('2b-to-1.js', 'iso6392BTo1', bTo1)
+  write('2t-to-2b.js', 'iso6392TTo2B', tTo2B)
+  write('2b-to-2t.js', 'iso6392BTo2T', bTo2T)
 
-  function write(name, data) {
-    fs.writeFile(name + '.json', JSON.stringify(data, null, 2) + '\n', bail)
-  }
-}
-
-function map(d) {
-  return {
-    name: d.n,
-    iso6392B: d.b,
-    iso6392T: d.t || undefined,
-    iso6391: d.i || undefined
+  function write(name, id, data) {
+    fs.writeFile(
+      name,
+      'export var ' + id + ' = ' + JSON.stringify(data, null, 2) + '\n',
+      bail
+    )
   }
 }

@@ -1,6 +1,7 @@
 # iso-639-2
 
 [![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
@@ -8,16 +9,10 @@
 
 Also includes pre-built indexes to map from 639-2 codes to other codes:
 
-*   [`iso-639-2/2b-to-1`][2b-to-1]
-    — Map bibliographic ISO 639-2 codes to ISO 639-1 codes
-*   [`iso-639-2/2b-to-2t`][2b-to-2t]
-    — Map bibliographic ISO 639-2 codes to terminologic ISO 639-2 codes
-*   [`iso-639-2/2t-to-1`][2t-to-1]
-    — Map terminologic ISO 639-2 codes to ISO 639-1 codes
-*   [`iso-639-2/2t-to-2b`][2t-to-2b]
-    — Map terminologic ISO 639-2 codes to bibliographic ISO 639-2 codes
-
 ## Install
+
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
 
 [npm][]:
 
@@ -28,7 +23,7 @@ npm install iso-639-2
 ## Use
 
 ```js
-var iso6392 = require('iso-639-2')
+import {iso6392} from 'iso-639-2'
 
 iso6392.slice(120, 150)
 ```
@@ -72,6 +67,10 @@ Yields:
 
 ## API
 
+This package exports the following identifiers: `iso6392`, `iso6392BTo1`,
+`iso6392BTo2T`, `iso6392TTo1`, `iso6392TTo2B`.
+There is no default export.
+
 ### `iso6392`
 
 `Array.<Language>` — List of languages.
@@ -79,9 +78,31 @@ Yields:
 #### `Language`
 
 *   `iso6392B` (`string`) — Bibliographic code
-*   `iso6392T` (`string?`) — Terminologic code
+*   `iso6392T` (`string?`) — Terminologic code (missing when B and T are the
+    same)
 *   `iso6391` (`string?`) — ISO 639-1 code
 *   `name` (`string`) — Language name
+
+### `iso6392BTo1`
+
+`Object.<string, string>` — ISO 639-2 Bibliographic (`dut`) to ISO 639-1 (`nl`)
+
+### `iso6392BTo2T`
+
+`Object.<string, string>` — ISO 639-2 Bibliographic (`dut`) to ISO 639-2
+Terminologic (`nld`).
+Missing when B & T are the same.
+
+### `iso6392TTo1`
+
+`Object.<string, string>` — ISO 639-2 Terminologic (`nld`) to ISO 639-1 (`nl`)
+Missing when B & T are the same.
+
+### `iso6392TTo2B`
+
+`Object.<string, string>` — ISO 639-2 Terminologic (`nld`) to ISO 639-2
+Bibliographic (`dut`).
+Missing when B & T are the same.
 
 ## Related
 
@@ -110,6 +131,10 @@ Yields:
 
 [build]: https://github.com/wooorm/iso-639-2/actions
 
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/iso-639-2.svg
+
+[coverage]: https://codecov.io/github/wooorm/iso-639-2
+
 [downloads-badge]: https://img.shields.io/npm/dm/iso-639-2.svg
 
 [downloads]: https://www.npmjs.com/package/iso-639-2
@@ -125,11 +150,3 @@ Yields:
 [author]: https://wooorm.com
 
 [source]: https://www.loc.gov/standards/iso639-2/php/code_list.php
-
-[2b-to-1]: 2b-to-1.json
-
-[2b-to-2t]: 2b-to-2t.json
-
-[2t-to-1]: 2t-to-1.json
-
-[2t-to-2b]: 2t-to-2b.json

@@ -16,8 +16,8 @@
   "repository": "wooorm/iso-639-2",
   "bugs": "https://github.com/wooorm/iso-639-2/issues",
   "funding": {
-     "type": "github",
-     "url": "https://github.com/sponsors/wooorm"
+    "type": "github",
+    "url": "https://github.com/sponsors/wooorm"
   },
   "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
   "contributors": [
@@ -31,7 +31,6 @@
     "2t-to-2b.json",
     "index.json"
   ],
-  "dependencies": {},
   "devDependencies": {
     "bail": "^1.0.0",
     "browserify": "^17.0.0",
@@ -42,7 +41,7 @@
     "remark-preset-wooorm": "^8.0.0",
     "tape": "^5.0.0",
     "tinyify": "^3.0.0",
-    "xo": "^0.37.0"
+    "xo": "^0.38.0"
   },
   "scripts": {
     "generate": "node build",

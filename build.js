@@ -23,6 +23,8 @@ function onconcat(buf) {
   var bTo2T = {}
   var tTo2B = {}
   var doc = String(buf)
+  var index = -1
+  var d
 
   if (doc.charCodeAt(0) === 0xfeff) {
     doc = doc.slice(1)
@@ -33,21 +35,19 @@ function onconcat(buf) {
     .parse('b|t|i|n\n' + doc)
     .map(map)
 
-  data.forEach((d) => {
-    var b = d.iso6392B
-    var t = d.iso6392T
-    var i = d.iso6391
+  while (++index < data.length) {
+    d = data[index]
 
-    if (i) {
-      bTo1[b] = i
-      if (t) tTo1[b] = i
+    if (d.iso6391) {
+      bTo1[d.iso6392B] = d.iso6391
+      if (d.iso6392T) tTo1[d.iso6392B] = d.iso6391
     }
 
-    if (t) {
-      bTo2T[b] = t
-      tTo2B[t] = b
+    if (d.iso6392T) {
+      bTo2T[d.iso6392B] = d.iso6392T
+      tTo2B[d.iso6392T] = d.iso6392B
     }
-  })
+  }
 
   write('index', data)
   write('2t-to-1', tTo1)

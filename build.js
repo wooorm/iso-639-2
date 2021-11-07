@@ -1,5 +1,5 @@
-import fs from 'fs'
-import https from 'https'
+import fs from 'node:fs'
+import https from 'node:https'
 import {bail} from 'bail'
 import concat from 'concat-stream'
 import dsv from 'd3-dsv'

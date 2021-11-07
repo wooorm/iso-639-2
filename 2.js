@@ -374,8 +374,7 @@ export var iso6392 = [
     iso6392B: 'chr'
   },
   {
-    name:
-      'Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic',
+    name: 'Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic',
     iso6392B: 'chu',
     iso6391: 'cu'
   },

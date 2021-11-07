@@ -1,4 +1,4 @@
-export var iso6392BTo1 = {
+export const iso6392BTo1 = {
   aar: 'aa',
   abk: 'ab',
   afr: 'af',

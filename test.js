@@ -2,7 +2,7 @@ import test from 'tape'
 import {iso6392} from './index.js'
 
 test('iso6392', function (t) {
-  var index = -1
+  let index = -1
 
   t.plan(5)
 

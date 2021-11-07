@@ -1,4 +1,4 @@
-export var iso6392BTo2T = {
+export const iso6392BTo2T = {
   alb: 'sqi',
   arm: 'hye',
   baq: 'eus',

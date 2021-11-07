@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import https from 'node:https'
 import {bail} from 'bail'
 import concat from 'concat-stream'
-import dsv from 'd3-dsv'
+import {dsvFormat} from 'd3-dsv'
 
 https
   .request(
@@ -28,36 +28,31 @@ function onconnection(response) {
  * @param {Buffer} buf
  */
 function onconcat(buf) {
-  var bTo1 = {}
-  var tTo1 = {}
-  var bTo2T = {}
-  var tTo2B = {}
-  var doc = String(buf)
-  var index = -1
-  /** @type {Iso6392} d */
-  var d
+  const bTo1 = {}
+  const tTo1 = {}
+  const bTo2T = {}
+  const tTo2B = {}
+  let doc = String(buf)
+  let index = -1
 
   if (doc.charCodeAt(0) === 0xfeff) {
     doc = doc.slice(1)
   }
 
-  var data = dsv
-    .dsvFormat('|')
+  const data = dsvFormat('|')
     .parse('b|t|i|n\n' + doc)
     .map(
       /** @param {Iso6392Raw} d */
-      function (d) {
-        return {
-          name: d.n,
-          iso6392B: d.b,
-          iso6392T: d.t || undefined,
-          iso6391: d.i || undefined
-        }
-      }
+      (d) => ({
+        name: d.n,
+        iso6392B: d.b,
+        iso6392T: d.t || undefined,
+        iso6391: d.i || undefined
+      })
     )
 
   while (++index < data.length) {
-    d = data[index]
+    const d = data[index]
 
     if (d.iso6391) {
       bTo1[d.iso6392B] = d.iso6391
@@ -84,7 +79,7 @@ function onconcat(buf) {
   function write(name, id, data) {
     fs.writeFile(
       name,
-      'export var ' + id + ' = ' + JSON.stringify(data, null, 2) + '\n',
+      'export const ' + id + ' = ' + JSON.stringify(data, null, 2) + '\n',
       bail
     )
   }

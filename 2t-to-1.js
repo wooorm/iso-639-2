@@ -1,4 +1,4 @@
-export var iso6392TTo1 = {
+export const iso6392TTo1 = {
   alb: 'sq',
   arm: 'hy',
   baq: 'eu',

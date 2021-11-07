@@ -1,4 +1,4 @@
-export var iso6392 = [
+export const iso6392 = [
   {
     name: 'Afar',
     iso6392B: 'aar',

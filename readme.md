@@ -5,19 +5,61 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-[ISO 639-2][source] codes in an accessible format, all of them.
+Info on ISO 639-2.
 
-Also includes pre-built indexes to map from 639-2 codes to other codes:
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`iso6392`](#iso6392)
+    *   [`iso6392BTo1`](#iso6392bto1)
+    *   [`iso6392BTo2T`](#iso6392bto2t)
+    *   [`iso6392TTo1`](#iso6392tto1)
+    *   [`iso6392TTo2B`](#iso6392tto2b)
+*   [Types](#types)
+*   [Data](#data)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This package contains info on [ISO 639-2][source].
+ISO 639-2 is the alpha-3 code in Codes for the representation of names of
+languages – Part 2.
+
+## When should I use this?
+
+You can use this package any time you have to deal with languages or ISO 639-2
+in particular.
+But [ISO 639-3][iso-639-3] might be better.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
 npm install iso-639-2
+```
+
+In Deno with [Skypack][]:
+
+```js
+import {iso6392} from 'https://cdn.skypack.dev/iso-639-2@3?dts'
+```
+
+In browsers with [Skypack][]:
+
+```html
+<script type="module">
+  import {iso6392} from 'https://cdn.skypack.dev/iso-639-2@3?min'
+</script>
 ```
 
 ## Use
@@ -68,41 +110,62 @@ Yields:
 ## API
 
 This package exports the following identifiers: `iso6392`, `iso6392BTo1`,
-`iso6392BTo2T`, `iso6392TTo1`, `iso6392TTo2B`.
+`iso6392BTo2T`, `iso6392TTo1`, and `iso6392TTo2B`.
 There is no default export.
 
 ### `iso6392`
 
-`Array.<Language>` — List of languages.
+List of languages (`Array<Language>`).
 
 #### `Language`
 
-*   `iso6392B` (`string`) — Bibliographic code
-*   `iso6392T` (`string?`) — Terminologic code (missing when B and T are the
-    same)
+*   `name` (`string`) — language name
+*   `iso6392B` (`string`) — bibliographic code
+*   `iso6392T` (`string?`) — terminologic code, missing when both 639-2 codes
+    are the same (21 languages have different bibliographic and terminologic
+    codes)
 *   `iso6391` (`string?`) — ISO 639-1 code
-*   `name` (`string`) — Language name
 
 ### `iso6392BTo1`
 
-`Object.<string, string>` — ISO 639-2 Bibliographic (`dut`) to ISO 639-1 (`nl`)
+ISO 639-2 Bibliographic (`dut`) to ISO 639-1 (`nl`) (`Record<string, string>`).
 
 ### `iso6392BTo2T`
 
-`Object.<string, string>` — ISO 639-2 Bibliographic (`dut`) to ISO 639-2
-Terminologic (`nld`).
-Missing when B & T are the same.
+ISO 639-2 Bibliographic (`dut`) to ISO 639-2 Terminologic (`nld`)
+(`Record<string, string>`)
+Missing when the bibliographic and terminologic codes are the same.
 
 ### `iso6392TTo1`
 
-`Object.<string, string>` — ISO 639-2 Terminologic (`nld`) to ISO 639-1 (`nl`)
-Missing when B & T are the same.
+ISO 639-2 Terminologic (`nld`) to ISO 639-1 (`nl`) (`Record<string, string>`).
+Not all language in 639-2 were available in 639-1.
 
 ### `iso6392TTo2B`
 
-`Object.<string, string>` — ISO 639-2 Terminologic (`nld`) to ISO 639-2
-Bibliographic (`dut`).
-Missing when B & T are the same.
+ISO 639-2 Terminologic (`nld`) to ISO 639-2 Bibliographic (`dut`)
+(`Record<string, string>`).
+Missing when the bibliographic and terminologic codes are the same.
+
+## Types
+
+This package is fully typed with [TypeScript][].
+An additional `Language` type is exported that models its respective
+interface.
+
+## Data
+
+The data is crawled from [`www.loc.gov`][source].
+
+## Compatibility
+
+This package is at least compatible with all maintained versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+It also works in Deno and modern browsers.
+
+## Security
+
+This package is safe.
 
 ## Related
 
@@ -120,6 +183,11 @@ Missing when B & T are the same.
     — ISO 15924 codes
 *   [`un-m49`](https://github.com/wooorm/un-m49)
     — UN M49 codes
+
+## Contribute
+
+Yes please!
+See [How to Contribute to Open Source][contribute].
 
 ## License
 
@@ -145,8 +213,18 @@ Missing when B & T are the same.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[skypack]: https://www.skypack.dev
+
 [license]: license
 
 [author]: https://wooorm.com
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[typescript]: https://www.typescriptlang.org
+
+[contribute]: https://opensource.guide/how-to-contribute/
+
 [source]: https://www.loc.gov/standards/iso639-2/php/code_list.php
+
+[iso-639-3]: https://github.com/wooorm/iso-639-3

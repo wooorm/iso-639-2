@@ -1,3 +1,8 @@
+/**
+ * Map of ISO 639-2 terminologic codes (`nld`) to ISO 639-1 codes (`nl`).
+ *
+ * @type {Record<string, string>}
+ */
 export const iso6392TTo1 = {
   alb: 'sq',
   arm: 'hy',

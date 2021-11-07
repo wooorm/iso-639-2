@@ -1,3 +1,8 @@
+/**
+ * Map of ISO 639-2 bibliographic codes (`dut`) to ISO 639-1 codes (`nl`).
+ *
+ * @type {Record<string, string>}
+ */
 export const iso6392BTo1 = {
   aar: 'aa',
   abk: 'ab',

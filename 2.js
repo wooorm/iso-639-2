@@ -1,3 +1,21 @@
+/**
+ * @typedef Language
+ *   One language.
+ * @property {string} name
+ *   Language name.
+ * @property {string} iso6392B
+ *   Bibliographic ISO 639-2 code.
+ * @property {string} [iso6392T]
+ *   Terminologic ISO 639-2 code.
+ * @property {string} [iso6391]
+ *   ISO 639-1 code.
+ */
+
+/**
+ * List of languages.
+ *
+ * @type {Array<Language>}
+ */
 export const iso6392 = [
   {
     name: 'Afar',

@@ -1,3 +1,8 @@
+/**
+ * Map of ISO 639-2 bibliographic codes (`dut`) to terminologic codes (`nld`).
+ *
+ * @type {Record<string, string>}
+ */
 export const iso6392BTo2T = {
   alb: 'sqi',
   arm: 'hye',

@@ -49,7 +49,7 @@ https
 
             if (d.iso6391) {
               bTo1[d.iso6392B] = d.iso6391
-              if (d.iso6392T) tTo1[d.iso6392B] = d.iso6391
+              if (d.iso6392T) tTo1[d.iso6392T] = d.iso6391
             }
 
             if (d.iso6392T) {

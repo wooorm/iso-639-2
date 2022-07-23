@@ -27,7 +27,7 @@ https
           let index = -1
 
           // BOM.
-          if (doc.charCodeAt(0) === 0xfeff) {
+          if (doc.codePointAt(0) === 0xfeff) {
             doc = doc.slice(1)
           }
 

@@ -19,8 +19,8 @@ Info on ISO 639-2.
     *   [`iso6392BTo2T`](#iso6392bto2t)
     *   [`iso6392TTo1`](#iso6392tto1)
     *   [`iso6392TTo2B`](#iso6392tto2b)
-*   [Types](#types)
 *   [Data](#data)
+*   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
 *   [Related](#related)
@@ -42,7 +42,7 @@ But [ISO 639-3][iso-639-3] might be better.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+In Node.js (version 14.14+, 16.0+), install with [npm][]:
 
 ```sh
 npm install iso-639-2
@@ -109,7 +109,7 @@ Yields:
 
 ## API
 
-This package exports the following identifiers: `iso6392`, `iso6392BTo1`,
+This package exports the identifiers `iso6392`, `iso6392BTo1`,
 `iso6392BTo2T`, `iso6392TTo1`, and `iso6392TTo2B`.
 There is no default export.
 
@@ -147,20 +147,19 @@ ISO 639-2 Terminologic (`nld`) to ISO 639-2 Bibliographic (`dut`)
 (`Record<string, string>`).
 Missing when the bibliographic and terminologic codes are the same.
 
-## Types
-
-This package is fully typed with [TypeScript][].
-An additional `Language` type is exported that models its respective
-interface.
-
 ## Data
 
 The data is crawled from [`www.loc.gov`][source].
 
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports an additional type `Language`.
+
 ## Compatibility
 
 This package is at least compatible with all maintained versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 It also works in Deno and modern browsers.
 
 ## Security
@@ -170,11 +169,11 @@ This package is safe.
 ## Related
 
 *   [`bcp-47`](https://github.com/wooorm/bcp-47)
-    — Parse and serialize BCP 47 language tags
+    — parse and serialize BCP 47 language tags
 *   [`bcp-47-match`](https://github.com/wooorm/bcp-47-match)
-    — Match BCP 47 language tags with language ranges per RFC 4647
+    — match BCP 47 language tags with language ranges per RFC 4647
 *   [`bcp-47-normalize`](https://github.com/wooorm/bcp-47-normalize)
-    — Normalize, canonicalize, and format BCP 47 tags
+    — normalize, canonicalize, and format BCP 47 tags
 *   [`iso-3166`](https://github.com/wooorm/iso-3166)
     — ISO 3166 codes
 *   [`iso-639-3`](https://github.com/wooorm/iso-639-3)

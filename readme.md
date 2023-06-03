@@ -19,6 +19,7 @@ Info on ISO 639-2.
     *   [`iso6392BTo2T`](#iso6392bto2t)
     *   [`iso6392TTo1`](#iso6392tto1)
     *   [`iso6392TTo2B`](#iso6392tto2b)
+    *   [`Language`](#language)
 *   [Data](#data)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
@@ -30,8 +31,8 @@ Info on ISO 639-2.
 ## What is this?
 
 This package contains info on [ISO 639-2][source].
-ISO 639-2 is the alpha-3 code in Codes for the representation of names of
-languages – Part 2.
+ISO 639-2 is the alpha-3 code in “Codes for the representation of names of
+languages – Part 2”.
 
 ## When should I use this?
 
@@ -42,7 +43,7 @@ But [ISO 639-3][iso-639-3] might be better.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 14.14+, 16.0+), install with [npm][]:
+In Node.js (version 16+), install with [npm][]:
 
 ```sh
 npm install iso-639-2
@@ -109,22 +110,17 @@ Yields:
 
 ## API
 
-This package exports the identifiers `iso6392`, `iso6392BTo1`,
-`iso6392BTo2T`, `iso6392TTo1`, and `iso6392TTo2B`.
+This package exports the identifiers
+[`iso6392`][api-iso-639-2],
+[`iso6392BTo1`][api-iso-639-2b-to-1],
+[`iso6392BTo2T`][api-iso-639-2b-to-2t],
+[`iso6392TTo1`][api-iso-639-2t-to-1], and
+[`iso6392TTo2B`][api-iso-639-2t-to-2b].
 There is no default export.
 
 ### `iso6392`
 
 List of languages (`Array<Language>`).
-
-#### `Language`
-
-*   `name` (`string`) — language name
-*   `iso6392B` (`string`) — bibliographic code
-*   `iso6392T` (`string?`) — terminologic code, missing when both 639-2 codes
-    are the same (21 languages have different bibliographic and terminologic
-    codes)
-*   `iso6391` (`string?`) — ISO 639-1 code
 
 ### `iso6392BTo1`
 
@@ -147,6 +143,21 @@ ISO 639-2 Terminologic (`nld`) to ISO 639-2 Bibliographic (`dut`)
 (`Record<string, string>`).
 Missing when the bibliographic and terminologic codes are the same.
 
+### `Language`
+
+One language (TypeScript type).
+
+###### Fields
+
+*   `name` (`string`)
+    — language name
+*   `iso6392B` (`string`)
+    — bibliographic ISO 639-2 code
+*   `iso6392T` (`string | undefined`)
+    — terminologic ISO 639-2 code (if different than `iso6392B`)
+*   `iso6391` (`string | undefined`)
+    — ISO 639-1 code (if available)
+
 ## Data
 
 The data is crawled from [`www.loc.gov`][source].
@@ -159,7 +170,7 @@ It exports an additional type `Language`.
 ## Compatibility
 
 This package is at least compatible with all maintained versions of Node.js.
-As of now, that is Node.js 14.14+ and 16.0+.
+As of now, that is Node.js 16+.
 It also works in Deno and modern browsers.
 
 ## Security
@@ -206,9 +217,9 @@ See [How to Contribute to Open Source][contribute].
 
 [downloads]: https://www.npmjs.com/package/iso-639-2
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/iso-639-2.svg
+[size-badge]: https://img.shields.io/badge/dynamic/json?label=minzipped%20size&query=$.size.compressedSize&url=https://deno.bundlejs.com/?q=iso-639-2
 
-[size]: https://bundlephobia.com/result?p=iso-639-2
+[size]: https://bundlejs.com/?q=iso-639-2
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -227,3 +238,13 @@ See [How to Contribute to Open Source][contribute].
 [source]: https://www.loc.gov/standards/iso639-2/php/code_list.php
 
 [iso-639-3]: https://github.com/wooorm/iso-639-3
+
+[api-iso-639-2]: #iso6392
+
+[api-iso-639-2b-to-1]: #iso6392bto1
+
+[api-iso-639-2b-to-2t]: #iso6392bto2t
+
+[api-iso-639-2t-to-1]: #iso6392tto1
+
+[api-iso-639-2t-to-2b]: #iso6392tto2b

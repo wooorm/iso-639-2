@@ -1,11 +1,9 @@
-/**
- * @typedef {{name: string, iso6392B: string, iso6392T?: string, iso6391?: string}} Iso6392
- */
+// To do: next major: generate one file.
 
 import assert from 'node:assert/strict'
 import fs from 'node:fs/promises'
-import {fetch} from 'undici'
 import {dsvFormat} from 'd3-dsv'
+import {fetch} from 'undici'
 
 const response = await fetch(
   'https://www.loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt'
@@ -29,7 +27,7 @@ if (text.codePointAt(0) === 0xfeff) {
 
 const data = dsvFormat('|')
   .parse('b|t|i|n\n' + text)
-  .map((d) => {
+  .map(function (d) {
     assert(d.n, 'expected name in all languages')
     assert(d.b, 'expected bibliographic in all languages')
     return {

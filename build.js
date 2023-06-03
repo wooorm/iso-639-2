@@ -62,10 +62,10 @@ await fs.writeFile(
     ' *   Language name.',
     ' * @property {string} iso6392B',
     ' *   Bibliographic ISO 639-2 code.',
-    ' * @property {string} [iso6392T]',
-    ' *   Terminologic ISO 639-2 code.',
-    ' * @property {string} [iso6391]',
-    ' *   ISO 639-1 code.',
+    ' * @property {string | undefined} [iso6392T]',
+    ' *   Terminologic ISO 639-2 code (if different than `iso6392B`).',
+    ' * @property {string | undefined} [iso6391]',
+    ' *   ISO 639-1 code (if available).',
     ' */',
     '',
     '/**',
@@ -73,7 +73,7 @@ await fs.writeFile(
     ' *',
     ' * @type {Array<Language>}',
     ' */',
-    'export const iso6392 = ' + JSON.stringify(data, null, 2),
+    'export const iso6392 = ' + JSON.stringify(data, undefined, 2),
     ''
   ].join('\n')
 )
@@ -86,7 +86,7 @@ await fs.writeFile(
     ' *',
     ' * @type {Record<string, string>}',
     ' */',
-    'export const iso6392BTo1 = ' + JSON.stringify(bTo1, null, 2),
+    'export const iso6392BTo1 = ' + JSON.stringify(bTo1, undefined, 2),
     ''
   ].join('\n')
 )
@@ -99,7 +99,7 @@ await fs.writeFile(
     ' *',
     ' * @type {Record<string, string>}',
     ' */',
-    'export const iso6392TTo1 = ' + JSON.stringify(tTo1, null, 2),
+    'export const iso6392TTo1 = ' + JSON.stringify(tTo1, undefined, 2),
     ''
   ].join('\n')
 )
@@ -112,7 +112,7 @@ await fs.writeFile(
     ' *',
     ' * @type {Record<string, string>}',
     ' */',
-    'export const iso6392TTo2B = ' + JSON.stringify(tTo2B, null, 2),
+    'export const iso6392TTo2B = ' + JSON.stringify(tTo2B, undefined, 2),
     ''
   ].join('\n')
 )
@@ -125,7 +125,7 @@ await fs.writeFile(
     ' *',
     ' * @type {Record<string, string>}',
     ' */',
-    'export const iso6392BTo2T = ' + JSON.stringify(bTo2T, null, 2),
+    'export const iso6392BTo2T = ' + JSON.stringify(bTo2T, undefined, 2),
     ''
   ].join('\n')
 )

@@ -5,10 +5,10 @@
  *   Language name.
  * @property {string} iso6392B
  *   Bibliographic ISO 639-2 code.
- * @property {string} [iso6392T]
- *   Terminologic ISO 639-2 code.
- * @property {string} [iso6391]
- *   ISO 639-1 code.
+ * @property {string | undefined} [iso6392T]
+ *   Terminologic ISO 639-2 code (if different than `iso6392B`).
+ * @property {string | undefined} [iso6391]
+ *   ISO 639-1 code (if available).
  */
 
 /**

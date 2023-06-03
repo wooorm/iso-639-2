@@ -4,7 +4,7 @@
 
 import assert from 'node:assert/strict'
 import fs from 'node:fs/promises'
-import fetch from 'node-fetch'
+import {fetch} from 'undici'
 import {dsvFormat} from 'd3-dsv'
 
 const response = await fetch(

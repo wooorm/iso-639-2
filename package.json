@@ -46,21 +46,21 @@
     "@types/node": "^20.0.0",
     "c8": "^7.0.0",
     "d3-dsv": "^3.0.0",
-    "node-fetch": "^3.0.0",
     "prettier": "^2.0.0",
     "remark-cli": "^11.0.0",
     "remark-preset-wooorm": "^9.0.0",
     "type-coverage": "^2.0.0",
     "typescript": "^5.0.0",
+    "undici": "^5.0.0",
     "xo": "^0.54.0"
   },
   "scripts": {
     "prepack": "npm run build && npm run format",
-    "generate": "node --conditions development build.js",
+    "regenerate": "node --conditions development build.js",
     "build": "tsc --build --clean && tsc --build && type-coverage",
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
     "test-api": "node --conditions development test.js",
-    "test-coverage": "c8 --check-coverage --100 --reporter lcov npm run test-api",
+    "test-coverage": "c8 --100 --reporter lcov npm run test-api",
     "test": "npm run build && npm run format && npm run test-coverage"
   },
   "prettier": {
@@ -71,15 +71,9 @@
     "semi": false,
     "trailingComma": "none"
   },
-  "xo": {
-    "prettier": true,
-    "rules": {
-      "unicorn/numeric-separators-style": "off"
-    }
-  },
   "remarkConfig": {
     "plugins": [
-      "preset-wooorm"
+      "remark-preset-wooorm"
     ]
   },
   "typeCoverage": {
@@ -87,5 +81,11 @@
     "detail": true,
     "strict": true,
     "ignoreCatch": true
+  },
+  "xo": {
+    "prettier": true,
+    "rules": {
+      "unicorn/numeric-separators-style": "off"
+    }
   }
 }
